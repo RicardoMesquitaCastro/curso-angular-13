@@ -12,12 +12,7 @@ import { Animal } from 'src/app/Animal';
 export class ListRenderComponent {
 
   animals: Animal[] = [];
-
-    // animal: Animal = {
-    //   name: 'Teste',
-    //   type: 'Alguma coisa',
-    //   age: 10,
-    // };
+    
 
     animalDetails = ''
 
