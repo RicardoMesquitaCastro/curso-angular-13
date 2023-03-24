@@ -22,11 +22,13 @@ export class ListRenderComponent {
 
 
   showAge(animal: Animal): void {
+    
     this.animalDetails = `O pet ${animal.name} tem ${animal.age} anos!`;
   }
 
   removeAnimal(animal: Animal){
-    this.animals = this.listService.remove(this.animals, animal);
+    this.animals = this.animals.filter((a) => animal.name !== a.name);
+    this.listService.remove(animal.id).subscribe();
   }
   
   getAnimals(): void {

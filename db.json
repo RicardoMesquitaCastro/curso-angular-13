@@ -1,11 +1,22 @@
-    
+{
+  "animals": [
     {
-        "animals":[
-    {"id":1, "name": "Turca", "type": "Dog", "age": 1 },
-    {"id":2, "name": "Caramelo", "type": "Cat", "age": 1 },
-    {"id":3, "name": "Pandora", "type": "Dog", "age": 1 },
-    {"id":4, "name": "Gamora", "type": "Dog", "age": 1 },
-    {"id":5, "name": "Belinha", "type": "Horse", "age": 1 },
-    {"id":6, "name": "XUXA", "type": "Bird", "age": 1 }
-        ]
+      "id": 3,
+      "name": "Pandora",
+      "type": "Dog",
+      "age": 1
+    },
+    {
+      "id": 4,
+      "name": "Gamora",
+      "type": "Dog",
+      "age": 1
+    },
+    {
+      "id": 5,
+      "name": "Belinha",
+      "type": "Horse",
+      "age": 1
     }
+  ]
+}
