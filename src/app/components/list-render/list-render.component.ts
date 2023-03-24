@@ -15,14 +15,14 @@ export class ListRenderComponent {
     {name: "Turca", type: "Dog", age: 1 },
     {name: "Gamora", type: "Cat", age: 4 },
     {name: "Pandora", type: "Dog", age: 9 },
-    {name: "Titica", type: "Horse", age:5 }
+    {name: "Titica", type: "Horse", age:  5 }
   ];
 
-    animal: Animal = {
-      name: 'Teste',
-      type: 'Alguma coisa',
-      age: 10,
-    };
+    // animal: Animal = {
+    //   name: 'Teste',
+    //   type: 'Alguma coisa',
+    //   age: 10,
+    // };
 
     animalDetails = ''
 
