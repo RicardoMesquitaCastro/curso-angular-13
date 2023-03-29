@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { ChangeNumberComponent } from './change-number.component';
 
@@ -20,4 +21,17 @@ describe('ChangeNumberComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
+
+  fit('Deve emit mensagem quando clicar no botão', () => {
+    const emitMessageSpy = spyOn(component.changeNumber, 'emit')
+
+    let button = fixture.debugElement.query(By.css('button')).nativeElement
+    button.click()
+
+    expect(emitMessageSpy).toHaveBeenCalled()
+  })
+
+
 });
