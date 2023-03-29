@@ -13,7 +13,7 @@ export class ListService {
   constructor(private http: HttpClient) { }
 
   remove(id: number){
-    return this.http.delete<Animal>(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
   getAll(): Observable<Animal[]>{
