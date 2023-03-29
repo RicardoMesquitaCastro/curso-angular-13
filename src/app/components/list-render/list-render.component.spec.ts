@@ -3,6 +3,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListRenderComponent } from './list-render.component';
 
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { ListService } from 'src/app/service/list.service';
+import { Observable, of } from 'rxjs';
+
+
 
 describe('ListRenderComponent', () => {
   let component: ListRenderComponent;
@@ -24,5 +28,11 @@ describe('ListRenderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Deve realizer chamada HTTP', () =>{
+
+  })
+
+  
   
 });

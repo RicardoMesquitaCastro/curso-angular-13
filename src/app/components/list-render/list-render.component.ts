@@ -49,7 +49,7 @@ export class ListRenderComponent  implements OnInit{
   onSubmit(){
     if(this.isEdition){
       this.listService.getPut(this.dados.value).subscribe({
-        next: (value) => value
+        next: (value) => console.log(value)
       })
       this.dados.reset();
       this.getAnimals()
@@ -70,6 +70,10 @@ export class ListRenderComponent  implements OnInit{
       type: animal.type,
       age: animal.age
     })
+  }
+
+  console(){
+    console.log(this.listService.getAll().subscribe((animals)=>(console.log(animals))))
   }
 
 }

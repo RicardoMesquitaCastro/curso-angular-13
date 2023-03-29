@@ -9,11 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class ListService {
   private apiUrl = 'http://localhost:3000/animals'
-  private apiUrlPost= 'http://localhost:3000/animals/'
+  private apiUrlPost= 'http://localhost:3000/animals'
   constructor(private http: HttpClient) { }
 
   getAdd(value : any) {
-    return this.http.post(`${this.apiUrlPost}`, value)
+    return this.http.post(`${this.apiUrlPost}/`, value)
   }
   
   getPut(value: any){

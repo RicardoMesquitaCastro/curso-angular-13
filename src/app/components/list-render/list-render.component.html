@@ -4,13 +4,14 @@
         <!-- <label>id</label><br> <input formControlName="id" type="number" ><br> -->
         <label>nome</label><br> <input formControlName="name" type="text" ><br>
         <label>tipo</label><br><input formControlName="type" type="text" ><br>
-        <label>idade</label><br><input formControlName="age" type="text" ><br>
+        <label>idade</label><br><input formControlName="age" type="number" ><br>
         <button>{{isEdition? 'Editar' : 'Adicionar' }}</button>
         <p>{{dados.value | json}}</p>
 
     </form>
 
     <h2>Animais:</h2>
+    <button (click)="console()">VER</button>
     <ul>
         <li *ngFor="let animal of animals">
         <a> Nome: {{animal.name}} - Tipo: {{animal.type}}</a> 
@@ -20,4 +21,5 @@
         </li>
     </ul>
     <h3>{{animalDetails}}</h3>
+
 </div>
