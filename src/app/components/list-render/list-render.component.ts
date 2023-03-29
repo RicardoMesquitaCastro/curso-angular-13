@@ -1,7 +1,8 @@
 import { ListService } from './../../service/list.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Animal } from 'src/app/Animal';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,17 +10,25 @@ import { Animal } from 'src/app/Animal';
   templateUrl: './list-render.component.html',
   styleUrls: ['./list-render.component.css']
 })
-export class ListRenderComponent {
+export class ListRenderComponent  implements OnInit{
 
-  animals: Animal[] = [];
-    
+  animals: Animal[] = [];    
+  animalDetails = ''
+  isEdition = false
 
-    animalDetails = ''
+  public dados: FormGroup = this.formBuilder.group({
+    id: [],
+    name: ['', Validators.compose([Validators.required,Validators.pattern('[a-zA-Z\s]*')])],
+    type: ['', Validators.compose([Validators.required,Validators.pattern('[a-zA-Z\s]*')])],
+    age: [ , Validators.required]
+  })
 
-    constructor(private listService:ListService) {
-      this.getAnimals()
+    constructor(private listService:ListService, private formBuilder: FormBuilder) {
     }    
 
+    ngOnInit(): void {
+      this.getAnimals()
+    }
 
   showAge(animal: Animal): void {
     
@@ -33,7 +42,34 @@ export class ListRenderComponent {
   
   getAnimals(): void {
     this.listService.getAll().subscribe((animals)=>(this.animals = animals));
+  }
 
+  
+
+  onSubmit(){
+    if(this.isEdition){
+      this.listService.getPut(this.dados.value).subscribe({
+        next: (value) => value
+      })
+      this.dados.reset();
+      this.getAnimals()
+    }else{
+    this.listService.getAdd(this.dados.value).subscribe({
+      next: (value)=> console.log(value)
+    })
+    this.dados.reset();
+    this.getAnimals()
+    }
+  }
+
+  editar(animal : any){
+    this.isEdition = true
+    this.dados.patchValue({
+      id: animal.id,
+      name: animal.name,
+      type: animal.type,
+      age: animal.age
+    })
   }
 
 }

@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListRenderComponent } from './list-render.component';
@@ -10,7 +11,8 @@ describe('ListRenderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule],
+      imports:[HttpClientTestingModule,
+      ReactiveFormsModule],
       declarations: [ ListRenderComponent ]
       
     })

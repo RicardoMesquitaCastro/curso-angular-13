@@ -1,4 +1,16 @@
 <div class="class">
+
+    <h2>Adicionar um animal</h2>
+    <form [formGroup]="dados" (ngSubmit)="onSubmit()">
+        <!-- <label>id</label><br> <input formControlName="id" type="number" ><br> -->
+        <label>nome</label><br> <input formControlName="name" type="text" ><br>
+        <label>tipo</label><br><input formControlName="type" type="text" ><br>
+        <label>idade</label><br><input formControlName="age" type="text" ><br>
+        <button>{{isEdition? 'Editar' : 'Adicionar' }}</button>
+        <p>{{dados.value | json}}</p>
+
+    </form>
+    
     <h2>Animais:</h2>
     <ul>
         <li *ngFor="let animal of animals">
