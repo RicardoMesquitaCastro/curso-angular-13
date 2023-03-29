@@ -1,13 +1,19 @@
 {
   "animals": [
     {
-      "id": 3,
+      "id": 1,
       "name": "Pandora",
       "type": "Dog",
       "age": 1
     },
     {
-      "id": 4,
+      "id": 2,
+      "name": "Squitle",
+      "type": "Água",
+      "age": 1
+    },
+    {
+      "id": 3,
       "name": "Gamora",
       "type": "Dog",
       "age": 1
@@ -17,6 +23,30 @@
       "name": "Belinha",
       "type": "Horse",
       "age": 1
+    },
+    {
+      "id": 6,
+      "name": "Bulbassaur",
+      "type": "planta",
+      "age": "2"
+    },
+    {
+      "id": 7,
+      "name": "Pikachu",
+      "type": "Trovão",
+      "age": "2"
+    },
+    {
+      "id": 8,
+      "name": "Charmander",
+      "type": "Fogo",
+      "age": "2"
+    },
+    {
+      "id": 9,
+      "name": "te",
+      "type": "te",
+      "age": "12"
     }
   ]
 }

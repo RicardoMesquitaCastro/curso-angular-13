@@ -27,6 +27,22 @@ describe('ListService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('Deve Adicionar novo adicionar um novo item', () => {
+    const response = {
+      id: null,
+      name: 'Bulbassaur',
+      type: 'planta',
+      age: '2'
+    }
+    service.getAdd(response).subscribe(
+      res => expect(res).toBe(response)
+    )
+    const request = httpTestingController.expectOne(`${url}/animals`)
+    expect(request.request.method).toBe('POST');
+    request.flush(response)
+    expect(request.request.url).toBe(`${url}/animals`)
+  })
+
   it('Deve realizar chamada HTTP', ()=>{
       service.getAll().subscribe()
       const request = httpTestingController.expectOne(`${url}/animals`)
